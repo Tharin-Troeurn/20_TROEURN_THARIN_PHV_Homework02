@@ -36,7 +36,11 @@ public class CheckingAccount implements Account{
 
     @Override
     public void transfer(double amount, Account targetAccount) {
-
+        if (amount <= balance) {
+            balance -= amount;
+            targetAccount.deposit(amount);
+            System.out.println("Transfer successful");
+        }
     }
 
 

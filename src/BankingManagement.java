@@ -239,7 +239,31 @@ public class BankingManagement {
     }
 
     public void transferMoney(){
+        String transferAmountStr;
+        System.out.println("\u001B[34m>>>>>>>>>>>>>>>> Transfer Money <<<<<<<<<<<<<<<<\u001B[0m");
+        System.out.println("1. Checking Account -> Saving Account");
+        System.out.println("2. Saving Account -> Checking Account");
+        System.out.println("3. Back");
+        System.out.print("Choose an option: ");
+        String chooseTypeAcc = sc.nextLine();
+        if (checkingAccount == null || savingAccount == null) {
+            System.out.println("\u001B[31mBoth accounts must exist to perform a transfer.\u001B[0m");
+            return;
+        }
+        if(chooseTypeAcc.equals("1")){
+            System.out.print("Enter money to transfer: ");
+            transferAmountStr = sc.nextLine();
 
+//            checkingAccount.transfer(Double.parseDouble(transferAmountStr),);
+
+
+        }else if (chooseTypeAcc.equals("2")){
+
+        }else if (chooseTypeAcc.equals("3")) {
+            return;
+        }else{
+            System.out.println("\u001B[31mInvalid option. Please choose again.\u001B[0m");
+        }
     }
 
 }
